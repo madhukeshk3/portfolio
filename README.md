@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A customizable Next.js portfolio website that can be easily personalized by editing a single configuration file.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- 🎨 Modern, responsive design with dark mode support
+- 📱 Mobile-friendly layout
+- 🖼️ Profile image display
+- 📄 Resume download link (Google Drive integration)
+- 🔗 Social media links with enable/disable functionality
+- 💼 Expandable experience section with company projects
+- 🛠️ Skills section
+- 📧 Contact information display
+- ⚡ Built with Next.js 15 and Tailwind CSS
 
-### `yarn start`
+## Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Customize your portfolio:**
+   Edit the `config/portfolio.ts` file with your information
 
-### `yarn test`
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-### `yarn build`
+## Customization
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Personal Information
+Edit the `personal` section in `config/portfolio.ts`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```typescript
+personal: {
+  name: "Your Name",
+  title: "Your Job Title",
+  bio: "Your bio description",
+  email: "your.email@example.com",
+  phone: "+1 (555) 123-4567",
+  location: "Your City, State",
+  profileImage: "/profile.jpg",
+  resumeUrl: "https://drive.google.com/file/d/your-resume-file-id/view"
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Profile Image:** Place your profile image in the `public` folder and update the `profileImage` path.
 
-### `yarn eject`
+**Resume Link:** 
+1. Upload your resume to Google Drive
+2. Right-click and select "Get link"
+3. Make sure it's set to "Anyone with the link can view"
+4. Copy the link and paste it in the `resumeUrl` field
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Social Media Links
+Enable/disable social platforms by setting `enabled` to `true` or `false`:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```typescript
+social: {
+  github: {
+    enabled: true,
+    url: "https://github.com/yourusername"
+  },
+  linkedin: {
+    enabled: true,
+    url: "https://linkedin.com/in/yourusername"
+  },
+  twitter: {
+    enabled: false,
+    url: "https://twitter.com/yourusername"
+  },
+  instagram: {
+    enabled: false,
+    url: "https://instagram.com/yourusername"
+  }
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Skills
+Add or remove skills from the array:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```typescript
+skills: [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Your Skills Here"
+]
+```
 
-## Learn More
+### Experience
+Add your work experience with expandable project details:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```typescript
+experience: [
+  {
+    company: "Company Name",
+    position: "Your Position",
+    duration: "Jan 2022 - Present",
+    location: "City, State",
+    description: "Brief description of your role and responsibilities.",
+    projects: [
+      {
+        title: "Project Name",
+        description: "Project description and impact",
+        technologies: ["Tech1", "Tech2", "Tech3"]
+      }
+    ]
+  }
+]
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Each experience entry is expandable, showing detailed project information when clicked.
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
 
-### Analyzing the Bundle Size
+### Other Platforms
+This is a standard Next.js application and can be deployed to any platform that supports Node.js applications.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Built With
 
-### Making a Progressive Web App
+- [Next.js 15](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Lucide React](https://lucide.dev/) - Beautiful icons
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source and available under the [MIT License](LICENSE).
