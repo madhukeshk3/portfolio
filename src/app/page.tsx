@@ -103,12 +103,12 @@ export default function Home() {
         <div className="text-center">
           {/* Profile Image */}
           <div className="mb-8">
-            <div className="relative w-32 h-32 mx-auto mb-6">
+            <div className="relative w-40 h-40 mx-auto mb-6">
               <Image
                 src={personal.profileImage}
                 alt={personal.name}
                 fill
-                className="rounded-full object-cover shadow-lg"
+                className="rounded-full object-contain bg-black shadow-lg"
                 priority
               />
             </div>
